@@ -7,39 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
-  isActive: boolean = false;
-  showMenu: string = '';
 
-  list: string = "Liste";
-  itemList: [string];
+  dashBoardList: string[] = [
+    'Material Colors',
+    'Flat Colors',
+    'Social Colors',
+    'Metro Colors',
+    'HTML Colors',
+    'Color Generator'
+  ]
 
-  newList: string[] = [
-    'NEW NEW 1',
-    'NEW NEW 1',
-    'NEW NEW 1',
-    'NEW NEW 1',
-    'NEW NEW 1'
-  ];
-
-  constructor() {
-    this.itemList = [
-      'Item1', 'Item2', 'Item3'
-    ];
-   }
+  constructor() { }
 
   ngOnInit() {
   }
-
-  eventCalled(){
-    this.isActive =  !this.isActive;
-  }
-
-  addExpandClass(element: any){
-    if(element == this.showMenu){
-      this.showMenu = '0';
-    }else{
-      this.showMenu = element;
-    }
-  }
-
+  
 }
