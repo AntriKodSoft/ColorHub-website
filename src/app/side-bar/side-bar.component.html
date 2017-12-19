@@ -5,10 +5,11 @@
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
-            <ul id="menu-content" class="menu-content collapse out">
-              <li *ngFor="let item of dashBoardList" >
-                <a href="#"> <i class="fa fa-lg"></i> {{ item }}  </a>
+            <ul id="menu-content" class="menu-content collapse out" ng-init="_active = true">
+              <li *ngFor="let item of dashBoardList; let inx = index;"   [ngClass]="{'active': inx === activeItem } " (click)="selectedItem(inx)"    >
+                <a href="#" > <i class="fa fa-lg" ></i> {{ item }}  </a>
               </li>
+
               <!--
                 <li>
                   <a href="#"> <i class="fa fa-dashboard fa-lg"></i> Dashboard </a>

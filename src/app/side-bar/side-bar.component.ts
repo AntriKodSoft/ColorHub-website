@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
+  _active: boolean = false;
+  activeItem: number = 0;
 
   dashBoardList: string[] = [
     'Material Colors',
@@ -21,5 +23,9 @@ export class SideBarComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  selectedItem(item: number){
+    this.activeItem = item;
+  };
   
 }
