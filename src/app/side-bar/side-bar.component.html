@@ -6,36 +6,9 @@
   
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out" ng-init="_active = true">
-              <li *ngFor="let item of dashBoardList; let inx = index;"   [ngClass]="{'active': inx === activeItem } " (click)="selectedItem(inx)"    >
+              <li *ngFor="let item of dashBoardList; let inx = index;"   [ngClass]="{'active': inx === activeItem, bubble: false} " (click)="selectedItem(inx)"    >
                 <a href="#" > <i class="fa fa-lg" ></i> {{ item }}  </a>
               </li>
-
-              <!--
-                <li>
-                  <a href="#"> <i class="fa fa-dashboard fa-lg"></i> Dashboard </a>
-                </li>
-
-                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><i class="fa fa-dashboard fa-lg"></i> UI Elements</a>
-                </li>
-
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-dashboard fa-lg"></i> Services </a>
-                </li>  
-
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-dashboard fa-lg"></i> New </a>
-                </li>
-
-                <li>
-                  <a href="#"> <i class="fa fa-dashboard fa-lg"></i> Profile </a>
-                </li>
-
-                <li>
-                  <a href="#"> <i class="fa fa-dashboard fa-lg"></i> Users </a>
-                </li>
-
-              -->
             </ul>
      </div>
 </div>
