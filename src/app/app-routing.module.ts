@@ -9,7 +9,7 @@ import { SocialColorsComponent } from './social-colors/social-colors.component';
 
 const routes: Routes = [
   { path: 'materialcolors', component: MaterialColorsComponent },
-  { path: 'flatcolors', component: MetroColorsComponent },
+  { path: 'flatcolors', component: FlatColorsComponent },
   { path: 'socialcolors', component: SocialColorsComponent },
   { path: 'metrocolors', component: MetroColorsComponent }, 
   { path: 'htmlcolors', component: HtmlColorsComponent },
