@@ -14,9 +14,46 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
           transform: 'scale(1)',
       })),
       state('large', style({
-          transform: 'scale(1.2)',
+          transform: 'scale(1)',
       })),
-      transition('small => large', animate('100ms ease-in')),
+      transition('small <=> large', animate(1000, keyframes([
+        style({opacity: 0, transform: 'perspective(800px) rotateX(-90deg);', offset: 0.0}),
+        style({opacity: 1, transform: 'perspective(800px) rotateX(50deg);', offset: 0.5}),
+        style({opacity: 1, transform: 'perspective(800px) rotateX(0deg);', offset: 1.0})
+      ]))),
+      /* // we can use it  origin:'50% 0%;'
+      transition('small <=> large', animate('300ms ease-in', keyframes([
+        style({opacity: 1, transform: 'translateY(35px)',  offset: 0.0}),
+        style({opacity: 1, transform: 'translateY(0)',     offset: 1.0})
+      ]))),
+*/
+      /*
+ 0% {
+    opacity: 0;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(-90deg);
+  }
+  
+  50% {
+    opacity: 1;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(50deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg);
+  }
+      */
+
+      /*
+      transition('small <=> large', animate('300ms ease-in', keyframes([
+        style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
+        style({opacity: 1, transform: 'translateY(35px)',  offset: 0.5}),
+        style({opacity: 1, transform: 'translateY(0)',     offset: 1.0})
+      ]))),
+      */
   ]),
   ]
 })
