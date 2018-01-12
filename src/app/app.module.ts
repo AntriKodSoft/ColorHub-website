@@ -9,6 +9,7 @@ import { FlatColorsComponent } from './flat-colors/flat-colors.component';
 import { SocialColorsComponent } from './social-colors/social-colors.component';
 import { MetroColorsComponent } from './metro-colors/metro-colors.component';
 import { HtmlColorsComponent } from './html-colors/html-colors.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HtmlColorsComponent } from './html-colors/html-colors.component';
     HtmlColorsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

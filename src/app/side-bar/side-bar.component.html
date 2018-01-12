@@ -6,9 +6,9 @@
   
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out" ng-init="_active = true">
-              <li *ngFor="let item of dashBoardList; let inx = index;"   [ngClass]="{'active': inx === activeItem, bubble: false} " (click)="selectedItem(inx)"    >
-                <a href="#" > <i class="fa fa-lg" ></i> {{ item }}  </a>
-              </li>
+              <li [routerLink]="item.route" *ngFor="let item of menuItems; let inx = index;" [ngClass]="{'active': inx === activeItem, bubble: false} " (click)="selectedItem(inx)">
+                <a> <i class="fa fa-lg" ></i> {{ item.name }}  </a>
+              </li>               
             </ul>
      </div>
 </div>

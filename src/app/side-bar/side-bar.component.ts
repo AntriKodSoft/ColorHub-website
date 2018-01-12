@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItems } from '../models/menuitems';
 
 @Component({
   selector: 'app-side-bar',
@@ -10,15 +11,15 @@ export class SideBarComponent implements OnInit {
   _active: boolean = false;
   activeItem: number = 0;
 
-  dashBoardList: string[] = [
-    'Material Colors',
-    'Flat Colors',
-    'Social Colors',
-    'Metro Colors',
-    'HTML Colors',
-    'Color Generator'
+  menuItems: MenuItems[] =  [
+    {name: 'Material Colors', route : 'materialcolors'},
+    {name: 'Flat Colors', route : 'flatcolors'},
+    {name: 'Social Colors', route : 'socialcolors'},
+    {name: 'Metro Colors', route : 'metrocolors'},
+    {name: 'HTML Colors', route : 'htmlcolors'},
+    {name: 'Color Generator', route : ''},
   ]
-
+  
   constructor() { }
 
   ngOnInit() {
