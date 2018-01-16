@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h1 class="h1_class">{{title}}</h1>
   <div class="row">
-    <div id="color_row" class="col-md-3 box" [style.background-color]="item.color"  *ngFor="let item of colorArray">
+    <div id="color_row" [@myAwesomeAnimation]='item.state' (click)="animateMe(ind)" class="col-md-3 box" [style.background-color]="item.color"  *ngFor="let item of colorArray; let ind = index">
         <div id="content">
             <!--[ngStyle]="{'background-color': 'gray' }" -->
             {{ item.name }}

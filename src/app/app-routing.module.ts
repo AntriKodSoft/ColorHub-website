@@ -8,6 +8,7 @@ import { HtmlColorsComponent } from '../app/html-colors/html-colors.component';
 import { SocialColorsComponent } from './social-colors/social-colors.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'materialcolors', pathMatch: 'full'},
   { path: 'materialcolors', component: MaterialColorsComponent },
   { path: 'flatcolors', component: FlatColorsComponent },
   { path: 'socialcolors', component: SocialColorsComponent },
