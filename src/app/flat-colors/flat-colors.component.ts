@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorItem } from '../models/coloritem';
 import { ColorItemX } from '../models/coloritem';
+import { ClipboardModule } from 'ngx-clipboard';
 import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 
 
@@ -57,7 +58,6 @@ export class FlatColorsComponent implements OnInit {
     {name: 'Asbestos	' , color: '#7f8c8d' , state:'small'},
     {name: 'Concrete	' , color: '#95a5a6' , state:'small'}
   ];
-
 
   state: string = 'small';
   

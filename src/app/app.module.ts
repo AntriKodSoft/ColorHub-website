@@ -10,6 +10,7 @@ import { SocialColorsComponent } from './social-colors/social-colors.component';
 import { MetroColorsComponent } from './metro-colors/metro-colors.component';
 import { HtmlColorsComponent } from './html-colors/html-colors.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AppRoutingModule } from './/app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
