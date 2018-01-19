@@ -27,9 +27,26 @@ export class MaterialColorsComponent implements OnInit {
   colorListItems: string[] = [
     'Blue', 'Cyan', 'Red', 'Black', 'Magnetia'
   ];
+
+  colorButton: string[] = [
+    '#ff00ff',
+    '#f0f0f0',
+    '#fff0f0'
+  ];
+
+  nmbr: number;
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  clickMe(): any{
+    console.log('Clicked Me');
+  }
+
+  getLabelFor(): any{
+    return 'test' + (this.nmbr++);
+  }
 }

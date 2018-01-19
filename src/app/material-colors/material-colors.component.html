@@ -1,13 +1,34 @@
 <div class="container-fluid">
     <h1 class="h1_class">Hello DashBoard!!!</h1>
   
+    <ol class="color-selector">
+        <li *ngFor="let item of colorButton;let ind = index;"  >
+            <input type="radio" id="test1" name="material-color" checked>
+            <label for="getLabelFor()" [ngStyle]="{'background-color': item}"></label>
+        </li>    
+    <!--
+        <li>
+            <input type="radio" id="test1" name="material-color" checked>
+            <label for="test1"></label>
+        </li>
+        <li>
+            <input type="radio" id="test2" name="material-color">
+            <label for="test1"></label>
+        </li>
+        <li>
+            <input type="radio" id="test3" name="material-color">
+            <label for="test1" [ngStyle]="{'background-color':'#FF0FF0'}"></label>
+        </li>
+    -->
+    </ol>
+    <!--
     <div class="row">
       <div id="color_row" class="col-md-3 box" [style.background-color]="clr.color"  *ngFor="let item of colorListItems">
           <div id="content" [ngStyle]="{'background-color': 'gray' }">
               {{ item }}
           </div>
       </div>
-      <!--
+
         <div class="col-md-3" style="background-color:cyan;">col-md-1</div>
         {{ colorName}} 
       <div class="col-md-3" style="background-color:white;">col-md-1</div>
@@ -15,7 +36,10 @@
       <div class="col-md-3" style="background-color:black;">col-md-1</div>
       <div class="col-md-3" style="background-color:black;">col-md-1</div>
       <div class="col-md-3" style="background-color:black;">col-md-1</div>
-    -->
     </div>
+    -->
   
 </div>
+
+ 
+ 
