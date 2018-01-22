@@ -66,21 +66,24 @@ p{
   }
 
 .color-selector{
-    width: 10%;
+    width: 100%;
     background-color: brown;
     display: flex;
     flex-direction: column;
     padding: 1em 0;
     border-right: 0.25em solid #E0E0E0;
     list-style: none;
-
+    //overflow:scroll;
+    //overflow-x:hidden;
+    margin: auto;
     input[type='radio']{
         display: none;
     }
     label {
+        margin-left: 1em;
+        margin-top: 0.7em;
         position: relative;
         display: inline-block;
-        //padding: 0.5em 1.5em;
         cursor: pointer;
 
         content: '';
@@ -104,85 +107,64 @@ p{
         transform: translate(-50%, -50%);
         
         padding: 1.3em;
-        border: 0.25em solid turquoise  ;
+        border: 0.25em solid white  ;
         border-radius: 50%;
         //background-color: turquoise;
         transition: padding 250ms;
     }
 }
 
-/*
-#lbl:hover{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    transform: translate(-50%, -50%);
-    
-    padding: 1.3em;
-    border: 0.25em solid turquoise  ;
-    border-radius: 50%;
-    //background-color: turquoise;
-    transition: padding 250ms;
+#color-sel{
+    background-color: blue;
+    width:80px;
+    float: left;
+    height: 90%;
 }
-*/
 
-
-
-//
-/*
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
+#color-col{
+    margin-left: 30px;
+    background-color: turquoise;
+    float: left;
+    width: 90%;
+    height: 90%;
 }
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label
-{
+
+/*
+.tooltip {
     position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    line-height: 20px;
     display: inline-block;
-    color: #666;
+    border-bottom: 1px dotted black;
 }
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
-    content: '';
+*/
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    border: 1px solid #ddd;
-    border-radius: 100%;
-    background: #fff;
-}
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background: #F87DA9;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-[type="radio"]:not(:checked) + label:after {
+    z-index: 1;
     opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-}
-[type="radio"]:checked + label:after {
-    border: 1px solid blue;
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    transition: opacity 0.3s;
 }
 
-*/
+.tooltiptext:hover {
+    content: "";
+    position: absolute;
+    //top: 100%;
+    //left: 50%;
+    //margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    visibility: visible;
+    opacity: 1;
+}
+
+input[type='radio']:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

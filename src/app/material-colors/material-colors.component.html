@@ -1,26 +1,55 @@
 <div class="container-fluid">
     <h1 class="h1_class">Hello DashBoard!!!</h1>
   
-    <ol class="color-selector">
-        <li *ngFor="let item of colorButton;let ind = index;"  >
-            <input type="radio" id="test1" name="material-color" checked>
-            <label for="getLabelFor()" [ngStyle]="{'background-color': item}"></label>
-        </li>    
+    <div id="color-sel">
+        <ol class="color-selector"> 
+            <li *ngFor="let item of matColorButtons;let ind = index;"  >
+                <input type="radio" id="clr{{ind}}" name="material-color" checked>
+                <label for="clr{{ind}}" [ngStyle]="{'background-color': item.color}" (mouseover)="mouseUp(ind)"></label>
+                <span tooltip="{{item.name}}"
+                [tooltipDisabled]="false"
+                [tooltipAnimation]="true"
+                tooltipPlacement="top">
+          </span>
+                <!--  
+                <span class="tooltiptext">Tooltip text</span>
+            -->
+            </li>   
+        </ol>
+    </div>
+
+    <div id="color-col">
+        <div class="row">
+            <div id="color_row" class="col-md-3 box" [style.background-color]="clr.color"  *ngFor="let item of colorListItems">
+                <div id="content" [ngStyle]="{'background-color': 'gray' }">
+                    {{ item }}
+                </div>
+            </div>
+          </div>
+    </div>
+
+        <!-- tooltip with dynamic html content -->
     <!--
-        <li>
-            <input type="radio" id="test1" name="material-color" checked>
-            <label for="test1"></label>
-        </li>
-        <li>
-            <input type="radio" id="test2" name="material-color">
-            <label for="test1"></label>
-        </li>
-        <li>
-            <input type="radio" id="test3" name="material-color">
-            <label for="test1" [ngStyle]="{'background-color':'#FF0FF0'}"></label>
-        </li>
+        <div>
+            <tooltip-content #myTooltip>
+                <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
+                <b><i><span style="color: #ffc520">Tooltip With</span></i></b> <small>Html support</small>.
+            </tooltip-content>
+     
+            <button [tooltip]="myTooltip">hover this button to see a tooltip</button>
+        </div>
     -->
-    </ol>
+    <!--
+    <div class="row">
+      <div id="color_row" class="col-md-3 box" [style.background-color]="clr.color"  *ngFor="let item of colorListItems">
+          <div id="content" [ngStyle]="{'background-color': 'gray' }">
+              {{ item }}
+          </div>
+      </div>
+    </div>
+    -->
+
+
     <!--
     <div class="row">
       <div id="color_row" class="col-md-3 box" [style.background-color]="clr.color"  *ngFor="let item of colorListItems">

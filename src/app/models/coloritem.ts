@@ -8,3 +8,9 @@ export class ColorItemX{
     color: string;
     state: string;
 }
+
+export class ColorRadioItem{
+    name: string;
+    color: string;
+    isChecked: boolean;
+}

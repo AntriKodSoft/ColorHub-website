@@ -11,6 +11,7 @@ import { MetroColorsComponent } from './metro-colors/metro-colors.component';
 import { HtmlColorsComponent } from './html-colors/html-colors.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import {TooltipModule} from "ng2-tooltip";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ClipboardModule
+    ClipboardModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
