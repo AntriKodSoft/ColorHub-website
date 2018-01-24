@@ -1,10 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ColorItem, ColorRadioItem } from '../models/coloritem';
+import { ColorItem, ColorRadioItem, ColorItemX } from '../models/coloritem';
+import { matColorList } from '../models/materialcolors';
+import { ClipboardModule } from 'ngx-clipboard';
+import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
+
+
 @Component({
   selector: 'app-material-colors',
   templateUrl: './material-colors.component.html',
-  styleUrls: ['./material-colors.component.scss']
+  styleUrls: ['./material-colors.component.scss'],
+  animations: [
+    trigger('myAwesomeAnimation', [
+      state('small', style({
+          transform: 'scale(1)',
+      })),
+      state('large', style({
+          transform: 'scale(1)',
+      })),
+      /*
+      transition('small <=> large', animate(1000, keyframes([
+        style({opacity: 0, transform: 'perspective(800px) rotateX(-90deg);', offset: 0.0}),
+        style({opacity: 1, transform: 'perspective(800px) rotateX(50deg);', offset: 0.5}),
+        style({opacity: 1, transform: 'perspective(800px) rotateX(0deg);', offset: 1.0})
+      ]))),
+      */
+       // we can use it  origin:'50% 0%;'
+      transition('small <=> large', animate('300ms ease-in', keyframes([
+        style({opacity: 1, transform: 'translateY(35px)',  offset: 0.0}),
+        style({opacity: 1, transform: 'translateY(0)',     offset: 1.0})
+      ]))),
+  ]),
+  ]
 })
 export class MaterialColorsComponent implements OnInit {
 
@@ -55,9 +82,12 @@ export class MaterialColorsComponent implements OnInit {
     '#fff0f0'
   ];
 
+  listItem: ColorItemX[];
+
   constructor() { }
 
   ngOnInit() {
+    this.listItem = matColorList[0].item;
   }
 
   clickMe(): any{
@@ -66,6 +96,15 @@ export class MaterialColorsComponent implements OnInit {
 
   mouseUp(ind: number): any{
     console.log('Over Here');
+  }
+
+  animateMe(ind: any) {
+    this.listItem[ind].state = (this.listItem[ind].state === 'small' ? 'large' : 'small');
+    //this.state = (this.state === 'small' ? 'large' : 'small');
+  }
+
+  clickRadio(ind:any){
+    this.listItem = matColorList[ind].item;
   }
 
 }

@@ -4,7 +4,7 @@
     <div id="color-sel">
         <ol class="color-selector"> 
             <li *ngFor="let item of matColorButtons;let ind = index;"  >
-                <input type="radio" id="clr{{ind}}" name="material-color" checked>
+                <input type="radio" id="clr{{ind}}" name="material-color" checked (click)="clickRadio(ind)">
                 <label for="clr{{ind}}" [ngStyle]="{'background-color': item.color}" (mouseover)="mouseUp(ind)"></label>
                 <span tooltip="{{item.name}}"
                 [tooltipDisabled]="false"
@@ -20,9 +20,10 @@
 
     <div id="color-col">
         <div class="row">
-            <div id="color_row" class="col-md-3 box" [style.background-color]="clr.color"  *ngFor="let item of colorListItems">
-                <div id="content" [ngStyle]="{'background-color': 'gray' }">
-                    {{ item }}
+            <div id="color_row" [@myAwesomeAnimation]='listItem[ind].state' (click)="animateMe(ind)" ngxClipboard [cbContent]="listItem[ind].color" class="col-md-3 box" [style.background-color]="item.color"  *ngFor="let item of listItem; let ind = index">
+                <div id="content"  >
+                    <!--[ngStyle]="{'background-color': 'gray' }" -->
+                    {{ item.name }}
                 </div>
             </div>
           </div>
